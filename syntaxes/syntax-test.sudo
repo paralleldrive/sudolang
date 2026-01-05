@@ -186,6 +186,10 @@ access = if (age >= 18 && isMember) "granted" else "denied"
 // Pipe operator for function composition
 processedData = rawData |> normalize |> filter |> sort
 
+// Context operator for accessing properties with implicit context
+painPoint = { impact: 8, frequency: 5 }
+priority = painPoint ~> impact * frequency  // equivalent to painPoint.impact * painPoint.frequency
+
 
 ## Disallowed Keywords
 

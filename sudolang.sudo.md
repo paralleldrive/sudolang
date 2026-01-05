@@ -149,6 +149,31 @@ h = f |> g;
 h(20); // 42
 ```
 
+### Context operator `~>`
+
+The context operator `~>` allows you to use the left-hand context to transform the input on the right. It's similar to `with` statements or binding contexts from functional programming languages. e.g.:
+
+```SudoLang
+PainPoint {
+  name
+  description
+  impact: 1..10      // how much this hurts when it happens
+  frequency: 1..10   // how often this happens
+}
+
+UserStory {
+  name
+  description
+  painPoint
+  // The following is equivalent to:
+  // priority = painPoint.impact * painPoint.frequency
+  priority = painPoint ~> impact * frequency
+  functionalRequirements
+  mockups
+  phases
+}
+```
+
 ### range (inclusive)
 
 The range operator `..` can be used to create a range of numbers. e.g.:
