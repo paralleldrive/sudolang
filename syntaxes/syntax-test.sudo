@@ -8,6 +8,13 @@ A quick cheat sheet for SudoLang syntax.
 
 ## Interfaces
 
+type DateTime = Number(POSIX time, e.g. JS Date.now())
+
+Meta {
+  id: String(cuid2)
+  createdAt: DateTime
+}
+
 DisplayTheme {
   mode: "light" | "dark"
   name: String
@@ -20,7 +27,8 @@ UserPreferences {
 }
 
 User {
-  id: String
+  // spread can be used for interface composition
+  ...meta
   displayName
   preferences
 }
@@ -189,7 +197,7 @@ processedData = rawData |> normalize |> filter |> sort
 
 ## Disallowed Keywords
 
-Should generate a warning for disallowed keywords.
+Should generate a warning for disallowed keywords, e.g. `class`, `extends`, and `super`. Favor composition over inheritance.
 
 class Foo extends Bar {
   constructor() {
