@@ -187,6 +187,49 @@ access = if (age >= 18 && isMember) "granted" else "denied"
 processedData = rawData |> normalize |> filter |> sort
 
 
+## XML Tags
+
+XML tags can be used to wrap content blocks.
+
+<template>
+```ts
+console.log('Hello, world!');
+function myFunction() {
+  console.log('Hello, world!');
+}
+```
+</template>
+<template-t>
+```ts
+console.log('Hello, world!');
+function myFunction() {
+  console.log('Hello, world!');
+}
+```
+</template-t>
+
+<template-t>
+```ts
+console.log('Hello, world!');
+function myFunction() {
+  console.log('Hello, world!');
+}
+```
+</template-t>
+
+<my-tag attr="value">
+</my-tag>
+
+
+## Block Quotes
+
+Block quotes can be specified using triple quotes:
+
+"""
+An example block quote.
+"""
+
+
 ## Disallowed Keywords
 
 Should generate a warning for disallowed keywords.
