@@ -107,3 +107,6 @@ dist
 .vscode/**/*
 !.vscode/launch.json
 .DS_Store
+
+# Test files
+test-frontmatter.sudo.md

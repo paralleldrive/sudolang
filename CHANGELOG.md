@@ -4,6 +4,7 @@
 
 ### Added
 
+- YAML frontmatter syntax highlighting for .sudo.md files - Keys, values, and quoted strings now have proper syntax highlighting matching standard .md files.
 - New [Autodux](examples/autodux.sudo) demonstrates how to use SudoLang to create a Redux state management system that automatically generates reducers, action creators, and selectors based on a brief description.
 - New [Whispers](examples/whispers.sudo) text adventure game demonstrates rich constraint-based programming and game `/save` and `/load` commands.
 

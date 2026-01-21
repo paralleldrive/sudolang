@@ -3,6 +3,7 @@
   "name": "SudoLang",
   "fileTypes": ["sudo", "sudo.md", "mdc"],
   "patterns": [
+    { "include": "#frontmatter" },
     { "include": "#comments" },
     { "include": "#markdown-headers" },
     { "include": "#keywords" },
@@ -15,6 +16,21 @@
     { "include": "#expressions" }
   ],
   "repository": {
+    "frontmatter": {
+      "begin": "\\A(---)",
+      "beginCaptures": {
+        "1": { "name": "punctuation.definition.comment.yaml" }
+      },
+      "end": "^(---|\\.\\.\\.)",
+      "endCaptures": {
+        "1": { "name": "punctuation.definition.comment.yaml" }
+      },
+      "name": "meta.embedded.block.frontmatter",
+      "contentName": "source.yaml",
+      "patterns": [
+        { "include": "source.yaml" }
+      ]
+    },
     "markdown-headers": {
       "patterns": [
         {
